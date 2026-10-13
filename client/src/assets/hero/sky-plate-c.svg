@@ -1,0 +1,37 @@
+<!-- TODO: Replace placeholder with photographic sky plate C -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 2000" width="3000" height="2000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Pale streaky sky gradient -->
+    <linearGradient id="paleSkyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7DD3FC" />
+      <stop offset="30%" stop-color="#BAE6FD" />
+      <stop offset="65%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#F0F9FF" />
+    </linearGradient>
+
+    <!-- Cirrus streak gradient -->
+    <linearGradient id="cirrusStreak" x1="0%" y1="0%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- Pale sky foundation -->
+  <rect width="3000" height="2000" fill="url(#paleSkyGrad)" />
+
+  <!-- Diagonal high-altitude cirrus streaks -->
+  <path d="M -200,400 Q 1200,200 3200,600 L 3200,680 Q 1200,320 -200,480 Z" fill="url(#cirrusStreak)" opacity="0.75" />
+  <path d="M -100,750 Q 1500,550 3100,950 L 3100,1020 Q 1500,670 -100,820 Z" fill="url(#cirrusStreak)" opacity="0.85" />
+  <path d="M 100,1100 Q 1600,900 3200,1250 L 3200,1320 Q 1600,1000 100,1180 Z" fill="url(#cirrusStreak)" opacity="0.65" />
+  <path d="M -200,1450 Q 1400,1280 3200,1600 L 3200,1660 Q 1400,1380 -200,1520 Z" fill="url(#cirrusStreak)" opacity="0.7" />
+  <path d="M 300,200 Q 1800,50 3200,350 L 3200,410 Q 1800,130 300,260 Z" fill="url(#cirrusStreak)" opacity="0.5" />
+
+  <!-- Soft ambient daylight glow -->
+  <radialGradient id="sunBloom" cx="80%" cy="25%" r="40%">
+    <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+    <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.3" />
+    <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+  </radialGradient>
+  <circle cx="2400" cy="500" r="800" fill="url(#sunBloom)" />
+</svg>

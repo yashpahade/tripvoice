@@ -1,0 +1,55 @@
+<!-- TODO: Replace placeholder with photographic sky plate A -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 2000" width="3000" height="2000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Sky gradient: Deep blue to soft horizon cyan -->
+    <linearGradient id="skyGradA" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="35%" stop-color="#3B82F6" />
+      <stop offset="65%" stop-color="#93C5FD" />
+      <stop offset="80%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#FEF3C7" />
+    </linearGradient>
+
+    <!-- Cloud Sea gradient -->
+    <linearGradient id="cloudSeaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#EFF6FF" />
+      <stop offset="70%" stop-color="#DBEAFE" />
+      <stop offset="100%" stop-color="#93C5FD" />
+    </linearGradient>
+
+    <!-- Sun glow -->
+    <radialGradient id="sunGlow" cx="72%" cy="62%" r="35%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#FEF08A" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#FDE047" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FDE047" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="3000" height="2000" fill="url(#skyGradA)" />
+
+  <!-- Distant sun glow near horizon -->
+  <circle cx="2160" cy="1240" r="600" fill="url(#sunGlow)" />
+
+  <!-- Horizon Line at y=1250 -->
+  <line x1="0" y1="1250" x2="3000" y2="1250" stroke="#FFFBEB" stroke-width="4" opacity="0.4" />
+
+  <!-- Vast cloud sea below horizon -->
+  <path d="M 0,1250 
+           Q 250,1230 500,1245 T 1000,1235 T 1500,1250 T 2000,1240 T 2500,1248 T 3000,1238
+           L 3000,2000 L 0,2000 Z" fill="url(#cloudSeaGrad)" />
+
+  <!-- Fluffy cloud puff tops -->
+  <ellipse cx="400" cy="1270" rx="350" ry="70" fill="#FFFFFF" opacity="0.9" />
+  <ellipse cx="900" cy="1260" rx="420" ry="85" fill="#FFFFFF" opacity="0.95" />
+  <ellipse cx="1450" cy="1275" rx="380" ry="80" fill="#FFFFFF" opacity="0.9" />
+  <ellipse cx="2050" cy="1255" rx="450" ry="90" fill="#FFFFFF" opacity="0.98" />
+  <ellipse cx="2650" cy="1270" rx="400" ry="75" fill="#FFFFFF" opacity="0.92" />
+
+  <!-- Foreground cloud billows -->
+  <ellipse cx="650" cy="1380" rx="550" ry="120" fill="#F8FAFC" opacity="0.85" />
+  <ellipse cx="1750" cy="1390" rx="680" ry="140" fill="#F8FAFC" opacity="0.9" />
+  <ellipse cx="2700" cy="1410" rx="500" ry="110" fill="#F8FAFC" opacity="0.85" />
+</svg>

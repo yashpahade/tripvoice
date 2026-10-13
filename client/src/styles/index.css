@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-h: 72px;
+  }
+  @media (max-width: 768px) {
+    :root {
+      --header-h: 64px;
+    }
+  }
+  html {
+    scroll-behavior: auto;
+    font-family: 'Lato', sans-serif;
+  }
+  body {
+    background: #F8FAFC;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::selection {
+    background-color: #0D9488;
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primaryDark text-white rounded-button px-6 py-2 font-bold hover:scale-105 transition-transform duration-200 shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-primary text-primary rounded-button px-6 py-2 font-bold hover:bg-primary/5 transition-colors duration-200;
+  }
+
+  .btn-accent {
+    @apply bg-gradient-to-r from-accent to-accentDark text-white rounded-button px-6 py-2 font-bold hover:scale-105 transition-transform duration-200 shadow-md;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, #0F172A 0%, #134E4A 100%);
+  }
+
+  .search-card {
+    @apply bg-white rounded-card shadow-card p-6;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primaryDark;
+  }
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-accentDark;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

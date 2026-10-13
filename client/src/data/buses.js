@@ -1,0 +1,96 @@
+export const MOCK_BUSES = [
+  {
+    id: 'b1',
+    operator: 'IntrCity SmartBus',
+    busType: 'Volvo 9600 AC Sleeper (2+1)',
+    depTime: '21:30',
+    depCity: 'Bengaluru',
+    arrTime: '06:30',
+    arrCity: 'Hyderabad',
+    duration: '9h 00m',
+    rating: 4.8,
+    reviews: 1420,
+    fare: 950,
+    seatsLeft: 12,
+  },
+  {
+    id: 'b2',
+    operator: 'Zingbus Plus',
+    busType: 'Scania Multi-Axle AC Sleeper (2+1)',
+    depTime: '22:00',
+    depCity: 'Bengaluru',
+    arrTime: '07:15',
+    arrCity: 'Hyderabad',
+    duration: '9h 15m',
+    rating: 4.6,
+    reviews: 980,
+    fare: 890,
+    seatsLeft: 8,
+  },
+  {
+    id: 'b3',
+    operator: 'VRL Travels',
+    busType: 'I-Shift AC Semi Sleeper (2+2)',
+    depTime: '22:45',
+    depCity: 'Bengaluru',
+    arrTime: '08:00',
+    arrCity: 'Hyderabad',
+    duration: '9h 15m',
+    rating: 4.5,
+    reviews: 2150,
+    fare: 750,
+    seatsLeft: 18,
+  },
+  {
+    id: 'b4',
+    operator: 'Orange Tours and Travels',
+    busType: 'Bharat Benz AC Sleeper (2+1)',
+    depTime: '23:15',
+    depCity: 'Bengaluru',
+    arrTime: '08:45',
+    arrCity: 'Hyderabad',
+    duration: '9h 30m',
+    rating: 4.7,
+    reviews: 1680,
+    fare: 1050,
+    seatsLeft: 5,
+  },
+];
+
+export const LOWER_DECK_SEATS = [
+  { id: 'L1', no: '1', type: 'sleeper', deck: 'lower', price: 950, isBooked: true, isLadies: false },
+  { id: 'L2', no: '2', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: true },
+  { id: 'L3', no: '3', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: false },
+  { id: 'L4', no: '4', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: false },
+  { id: 'L5', no: '5', type: 'sleeper', deck: 'lower', price: 900, isBooked: true, isLadies: false },
+  { id: 'L6', no: '6', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: false },
+  { id: 'L7', no: '7', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: false },
+  { id: 'L8', no: '8', type: 'sleeper', deck: 'lower', price: 950, isBooked: true, isLadies: false },
+  { id: 'L9', no: '9', type: 'sleeper', deck: 'lower', price: 950, isBooked: false, isLadies: true },
+  { id: 'L10', no: '10', type: 'sleeper', deck: 'lower', price: 900, isBooked: false, isLadies: false },
+];
+
+export const UPPER_DECK_SEATS = [
+  { id: 'U1', no: 'U1', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: false },
+  { id: 'U2', no: 'U2', type: 'sleeper', deck: 'upper', price: 1050, isBooked: true, isLadies: false },
+  { id: 'U3', no: 'U3', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: false },
+  { id: 'U4', no: 'U4', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: true },
+  { id: 'U5', no: 'U5', type: 'sleeper', deck: 'upper', price: 1000, isBooked: false, isLadies: false },
+  { id: 'U6', no: 'U6', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: false },
+  { id: 'U7', no: 'U7', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: false },
+  { id: 'U8', no: 'U8', type: 'sleeper', deck: 'upper', price: 1050, isBooked: true, isLadies: false },
+  { id: 'U9', no: 'U9', type: 'sleeper', deck: 'upper', price: 1050, isBooked: false, isLadies: false },
+  { id: 'U10', no: 'U10', type: 'sleeper', deck: 'upper', price: 1000, isBooked: false, isLadies: false },
+];
+
+export const BOARDING_POINTS = [
+  { id: 'bp1', name: 'Majestic Bus Stand', time: '21:30', landmark: 'Platform 18' },
+  { id: 'bp2', name: 'Anand Rao Circle', time: '21:50', landmark: 'Opposite Hotel Maurya' },
+  { id: 'bp3', name: 'Hebbal Flyover', time: '22:20', landmark: 'Near Esteem Mall' },
+];
+
+export const DROPPING_POINTS = [
+  { id: 'dp1', name: 'Ameerpet Metro Station', time: '06:15', landmark: 'Pillar 1042' },
+  { id: 'dp2', name: 'Secunderabad Railway Station', time: '06:45', landmark: 'Near Gurudwara' },
+  { id: 'dp3', name: 'MGBS Central Bus Station', time: '07:15', landmark: 'Platform 4' },
+];

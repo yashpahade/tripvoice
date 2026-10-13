@@ -1,0 +1,64 @@
+<!-- TODO: Replace placeholder with high-resolution 3D/photographic cabin wall asset if provided -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 2000" width="3000" height="2000">
+  <defs>
+    <!-- Mask to punch transparent hole in cabin wall for window opening -->
+    <mask id="cabinWindowHole">
+      <rect width="3000" height="2000" fill="white" />
+      <ellipse cx="1500" cy="1000" rx="460" ry="780" fill="black" />
+    </mask>
+
+    <!-- Radial lighting on cabin wall -->
+    <radialGradient id="cabinLight" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#342823" stop-opacity="0.8" />
+      <stop offset="45%" stop-color="#211915" stop-opacity="0.95" />
+      <stop offset="85%" stop-color="#120e0c" stop-opacity="1" />
+      <stop offset="100%" stop-color="#090706" stop-opacity="1" />
+    </radialGradient>
+
+    <!-- Bevel rim gradients -->
+    <linearGradient id="rimOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a3b34" />
+      <stop offset="50%" stop-color="#2b211d" />
+      <stop offset="100%" stop-color="#150f0d" />
+    </linearGradient>
+
+    <linearGradient id="rimInner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e1613" />
+      <stop offset="40%" stop-color="#3d2f28" />
+      <stop offset="100%" stop-color="#18110e" />
+    </linearGradient>
+
+    <linearGradient id="shadeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#302520" />
+      <stop offset="85%" stop-color="#231a16" />
+      <stop offset="100%" stop-color="#16100d" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. Dark Cabin Wall with Window Opening Cutout -->
+  <rect width="3000" height="2000" fill="url(#cabinLight)" mask="url(#cabinWindowHole)" />
+
+  <!-- 2. Window Exterior Bevel & Frame (Outer border) -->
+  <ellipse cx="1500" cy="1000" rx="540" ry="860" fill="none" stroke="url(#rimOuter)" stroke-width="40" />
+  <ellipse cx="1500" cy="1000" rx="500" ry="820" fill="none" stroke="url(#rimInner)" stroke-width="24" />
+  <ellipse cx="1500" cy="1000" rx="475" ry="795" fill="none" stroke="#5a473e" stroke-width="8" opacity="0.6" />
+  <ellipse cx="1500" cy="1000" rx="462" ry="782" fill="none" stroke="#120d0b" stroke-width="12" />
+
+  <!-- 3. Upper Sun Shade (pulled down ~15% from top of window) -->
+  <g clip-path="url(#windowClip)">
+    <clipPath id="windowClip">
+      <ellipse cx="1500" cy="1000" rx="458" ry="778" />
+    </clipPath>
+    <path d="M 950,220 L 2050,220 L 2050,440 Q 1500,470 950,440 Z" fill="url(#shadeGrad)" stroke="#1a120f" stroke-width="4" />
+    <!-- Shade pull handle -->
+    <rect x="1440" y="435" width="120" height="18" rx="9" fill="#4d3b33" stroke="#251a15" stroke-width="2" />
+  </g>
+
+  <!-- 4. Subtle Glass Glare / Corner Reflection -->
+  <path d="M 1100,350 Q 1500,320 1850,480 A 458 778 0 0 0 1100,350 Z" fill="#ffffff" opacity="0.04" />
+</svg>

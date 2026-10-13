@@ -1,0 +1,47 @@
+<!-- TODO: Replace placeholder with photographic sky plate B -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 2000" width="3000" height="2000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Deep atmospheric blue gradient for top-down perspective -->
+    <radialGradient id="deepAtmosphere" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="45%" stop-color="#172554" />
+      <stop offset="80%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#080D1A" />
+    </radialGradient>
+
+    <!-- Dense cumulus textures -->
+    <radialGradient id="cloudMass1" cx="40%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#93C5FD" stop-opacity="0.85" />
+      <stop offset="40%" stop-color="#3B82F6" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#1D4ED8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="cloudMass2" cx="60%" cy="55%" r="50%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#2563EB" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#1E40AF" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="whitePuff" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#BAE6FD" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Deep space/atmosphere background -->
+  <rect width="3000" height="2000" fill="url(#deepAtmosphere)" />
+
+  <!-- Dense cloud patterns seen from above -->
+  <circle cx="850" cy="700" r="700" fill="url(#cloudMass1)" />
+  <circle cx="2150" cy="1150" r="850" fill="url(#cloudMass2)" />
+  <circle cx="1500" cy="950" r="950" fill="url(#cloudMass1)" />
+  <circle cx="600" cy="1400" r="750" fill="url(#cloudMass2)" />
+  <circle cx="2400" cy="500" r="600" fill="url(#cloudMass1)" />
+
+  <!-- High-altitude bright cloud summits -->
+  <ellipse cx="1400" cy="850" rx="420" ry="260" fill="url(#whitePuff)" />
+  <ellipse cx="1800" cy="920" rx="350" ry="210" fill="url(#whitePuff)" />
+  <ellipse cx="980" cy="650" rx="310" ry="190" fill="url(#whitePuff)" />
+  <ellipse cx="2250" cy="1100" rx="380" ry="230" fill="url(#whitePuff)" />
+</svg>
