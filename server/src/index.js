@@ -18,7 +18,7 @@ connectDB();
 // Apply middleware
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || true,
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
@@ -29,11 +29,12 @@ if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
 }
 app.use(compression());
 
-// Mount routes
+// Mount routes (both /api and / to handle direct and rewritten requests)
 app.use('/api', routes);
+app.use('/', routes);
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get(['/api/health', '/health'], (req, res) => {
   res.status(200).json({
     success: true,
     message: 'TripNest API is running',
@@ -45,18 +46,23 @@ app.get('/api/health', (req, res) => {
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
-const server = app.listen(PORT, () => {
-  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
-});
+let server;
 
-// Handle unhandled promise rejections
-process.on('unhandledRejection', (err, promise) => {
-  console.error(`Error: ${err.message}`);
-  // Close server & exit process
-  server.close(() => process.exit(1));
-});
+if (!process.env.VERCEL) {
+  server = app.listen(PORT, () => {
+    console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
+  });
 
-process.on('uncaughtException', (err) => {
-  console.error(`Uncaught Exception: ${err.message}`);
-  server.close(() => process.exit(1));
-});
+  // Handle unhandled promise rejections
+  process.on('unhandledRejection', (err, promise) => {
+    console.error(`Error: ${err.message}`);
+    if (server) server.close(() => process.exit(1));
+  });
+
+  process.on('uncaughtException', (err) => {
+    console.error(`Uncaught Exception: ${err.message}`);
+    if (server) server.close(() => process.exit(1));
+  });
+}
+
+module.exports = app;
